@@ -1,21 +1,15 @@
 #!/bin/bash
 
 target_dir="pao-kb"
-target_url="https://github.com/KhunHtetzNaing/macOS-PaOh-Keyboard/raw/main/"
-files=("pao" "paoh_kb.sh")
 echo "🔰 Started download file and script 📂"
+curl -L https://github.com/KhunHtetzNaing/macOS-PaOh-Keyboard/archive/main.zip --output main.zip
+unzip -qq main.zip
 
-if [ -d $target_dir ]; then
-    rm -rf $target_dir
+if [ -d $target ]; then
+    rm -rf $target
 fi
 
-for url in "${files[@]}"; do
-    wget -c -q "${target_url}${url}" -P "$target_dir" --show-progress && chmod +x "${target_dir}/${url}" || {
-        echo "Download failed 🥺"
-        exit 1
-    }
-done
-cd $target_dir
+mv macOS-PaOh-Keyboard-main $target_dir
 
 echo ""
 echo "✅ Ready to install 🥳"
