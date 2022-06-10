@@ -11,7 +11,7 @@ macOS မှာ Default ပါလာတဲ့ Myanmar လက်ကွက်က�
 ဒီ **Repository** ကိုဒေါင်းပြီး **paoh_kb.sh** ကို **Run** လိုက်ရုံပါပဲ။
 
     # Download လုပ်ခြင်း
-    bash <(wget -qO- https://github.com/KhunHtetzNaing/macOS-PaOh-Keyboard/raw/main/download.sh) && cd pao-kb
+    curl -o- -L https://github.com/KhunHtetzNaing/macOS-PaOh-Keyboard/raw/main/download.sh | bash && cd pao-kb
     
     # Install လုပ်ရန်
     ./paoh_kb.sh install
